@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<head>
+<title>M.E.D.E.C.</title>
+<link rel="shortcut icon" type="image/png" href="/static/logos.png">
+<link rel="stylesheet" href="/static/search_style.css">
+</head>
+{% block content %}
+<script type="text/JavaScript">
+    function alert_disease() {
+        var section1 = document.getElementById('warning1');
+        var section2 = document.getElementById('warning2');
+        var section3 = document.getElementById('warning3');
+        var section4 = document.getElementById('warning4');
+
+        if ('{{ bad_list }}'.includes('{{ diseasename1 }}')) {
+            section1.removeAttribute('hidden');
+        } else if ('{{ bad_list }}'.includes('{{ diseasename2 }}')) {
+            section2.removeAttribute('hidden');
+        } else if ('{{ bad_list }}'.includes('{{ diseasename3 }}')) {
+            section3.removeAttribute('hidden');
+        } else if ('{{ bad_list }}'.includes('{{ diseasename4 }}')) {
+            section4.removeAttribute('hidden');
+        } else {
+            section1.setAttribute('hidden', 'hidden');
+            section2.setAttribute('hidden', 'hidden');
+            section3.setAttribute('hidden', 'hidden');
+            section4.setAttribute('hidden', 'hidden');
+        }
+        
+    }
+    function link_change1() {
+        var frame = document.getElementById('cdc');
+        var color = document.getElementById('div1');
+        color.style.backgroundColor = "#C4EBF1";
+        color.style.boxShadow = "5px 5px #4F4F4F";
+        frame.setAttribute("src", "{{link1}}");
+
+        var color = document.getElementById('div2');
+        color.style.backgroundColor = "#ffffff";
+        color.style.boxShadow = "0px 0px #4F4F4F";
+
+        var color = document.getElementById('div3');
+        color.style.backgroundColor = "#ffffff";
+        color.style.boxShadow = "0px 0px #4F4F4F";
+
+        var color = document.getElementById('div4');
+        color.style.backgroundColor = "#ffffff";
+        color.style.boxShadow = "0px 0px #4F4F4F";
+    }
+    function link_change2() {
+        var frame = document.getElementById('cdc');
+        var color = document.getElementById('div2');
+        color.style.backgroundColor = "#C4EBF1";
+        color.style.boxShadow = "5px 5px #4F4F4F";
+        frame.setAttribute("src", "{{link2}}");
+
+        var color = document.getElementById('div1');
+        color.style.backgroundColor = "#ffffff";
+        color.style.boxShadow = "0px 0px #4F4F4F";
+
+        var color = document.getElementById('div3');
+        color.style.backgroundColor = "#ffffff";
+        color.style.boxShadow = "0px 0px #4F4F4F";
+
+        var color = document.getElementById('div4');
+        color.style.backgroundColor = "#ffffff";
+        color.style.boxShadow = "0px 0px #4F4F4F";
+    }
+    function link_change3() {
+        var frame = document.getElementById('cdc');
+        var color = document.getElementById('div3');
+        color.style.backgroundColor = "#C4EBF1";
+        color.style.boxShadow = "5px 5px #4F4F4F";
+        frame.setAttribute("src", "{{link3}}");
+
+        var color = document.getElementById('div2');
+        color.style.backgroundColor = "#ffffff";
+        color.style.boxShadow = "0px 0px #4F4F4F";
+
+        var color = document.getElementById('div1');
+        color.style.backgroundColor = "#ffffff";
+        color.style.boxShadow = "0px 0px #4F4F4F";
+
+        var color = document.getElementById('div4');
+        color.style.backgroundColor = "#ffffff";
+        color.style.boxShadow = "0px 0px #4F4F4F";
+    }
+    function link_change4() {
+        var frame = document.getElementById('cdc');
+        var color = document.getElementById('div4');
+        color.style.backgroundColor = "#C4EBF1";
+        color.style.boxShadow = "5px 5px #4F4F4F";
+        frame.setAttribute("src", "{{link4}}");
+
+        var color = document.getElementById('div2');
+        color.style.backgroundColor = "#ffffff";
+        color.style.boxShadow = "0px 0px #4F4F4F";
+
+        var color = document.getElementById('div3');
+        color.style.backgroundColor = "#ffffff";
+        color.style.boxShadow = "0px 0px #4F4F4F";
+
+        var color = document.getElementById('div1');
+        color.style.backgroundColor = "#ffffff";
+        color.style.boxShadow = "0px 0px #4F4F4F";
+    }
+</script>
+{% endblock %}
+<body onload='alert_disease()' style="background-color:#FFF684;" >
+  <div class="embed">
+    <iframe id="cdc" src="https://search.cdc.gov/search/?query=" width="900" height="680" title="CDC Information"></iframe>
+  </div>
+  <div class='img'>
+    <img src="/static/logos.png" onclick="location.href='http://127.0.0.1:5000/'" style="width:150px;height:150px;" >
+  </div>
+  <div id="div1" class="entry" onclick="link_change1()">
+    <label class="disease_head">{{ diseasename1 }}</label>
+    <br>
+    <label class="disease"> - {{ percentmatch1 }}% Match</label>
+    <img id='warning1' title='Medical Attention Recommended' hidden="hidden" class="warning" src="/static/warning.png" style="width:50px;height:50px;" >
+    <br>
+    <a class="disease" id="linkhold1" target="_blank" href={{ link1 }}> - Even More Info Here</a>
+    <br>
+  </div>
+  <div id="div2" class="entry" onclick="link_change2()">
+    <label class="disease_head">{{ diseasename2 }}</label>
+    <br>
+    <label class="disease"> - {{ percentmatch2 }}% Match</label>
+    <img id='warning2' title='Medical Attention Recommended' hidden="hidden" class="warning" src="/static/warning.png" style="width:50px;height:50px;" >
+    <br>
+    <a class="disease" id="linkhold2" target="_blank" href={{ link2 }}> - Even More Info Here</a>
+    <br>
+  </div>
+  <div id="div3" class="entry" onclick="link_change3()">
+    <label class="disease_head">{{ diseasename3 }}</label>
+    <br>
+    <label class="disease"> - {{ percentmatch3 }}% Match</label>
+    <img id='warning3' title='Medical Attention Recommended' hidden="hidden" class="warning" src="/static/warning.png" style="width:50px;height:50px;" >
+    <br>
+    <a class="disease" id="linkhold3" target="_blank" href={{ link3 }}> - Even More Info Here</a>
+    <br>
+  </div>
+  <div id="div4" class="entry" onclick= "link_change4()">
+    <label class="disease_head">{{ diseasename4 }}</label>
+    <br>
+    <label class="disease"> - {{ percentmatch4 }}% Match</label>
+    <img id='warning4' title='Medical Attention Recommended' hidden="hidden" class="warning" src="/static/warning.png" style="width:50px;height:50px;" >
+    <br>
+    <a class="disease" id="linkhold4" target="_blank" href={{ link4 }}> - Even More Info Here</a>
+    <br>
+  </div>
+  <footer class="footer">
+    <p>| Atharva Goel & Aaditya Agnihotri |</p>
+  </footer>
+
+</body>
+</html>
