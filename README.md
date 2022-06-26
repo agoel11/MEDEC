@@ -8,8 +8,9 @@ The file model.h5 is the file of the fully trained model that we created. This f
 Here's a video of us describing MEDEC. The problem, solution, and demo is all there. https://vimeo.com/724266000
 
 Also MEDEC stands for:  
-M - medical  
-E - educator  
-D - delivering  
-E - essential  
-C - care  
+M - Medical  
+E - Educator  
+D - Delivering  
+E - Essential  
+C - Care  
+![logos](https://user-images.githubusercontent.com/81878922/175834597-843f55a0-55c0-429b-9b4a-a1b196388d36.png)
