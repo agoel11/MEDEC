@@ -1,6 +1,4 @@
 # MEDEC
-This is a healthcare website for a hackathon.
+MEDEC is a website that uses machine learning to provide healthcare information to people without affordable or accessible healthcare and information regarding it.
 
-You need Flask and Tensorflow to use it.
-
-It uses ML, Python, HTML, CSS, and JS.
+This website uses Flask and Python for the backend, and HTML, CSS, and JS for the frontend. We also used Tensorflow, Keras, and Sci-Kit Learn to create the model.
