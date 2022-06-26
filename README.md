@@ -7,9 +7,9 @@ The file model.h5 is the file of the fully trained model that we created. This f
 
 Here's a video of us describing MEDEC. The problem, solution, and demo is all there. https://vimeo.com/724266000
 
-Also MEDEC stands for:__
-M - medical__
-E - educator__
-D - delivering__
-E - essential__
-C - care__
+Also MEDEC stands for:  
+M - medical  
+E - educator  
+D - delivering  
+E - essential  
+C - care  
